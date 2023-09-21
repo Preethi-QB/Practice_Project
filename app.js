@@ -22,7 +22,7 @@ db.connect((err) => {
 
 const app = express()
 app.use(express.json())
-const PORT = 3000;
+const PORT = 8016;
 
 
 app.get('/listProduct', (req, res)=>{
