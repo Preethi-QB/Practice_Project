@@ -1,13 +1,13 @@
 const express = require("express");
 const mysql = require('mysql');
-
+require('dotenv').config()
 
 //Create db connection
 const db = mysql.createConnection({
-    host: 'localhost',
-    user:   'root',
-    password:   'password',
-    database:   'product_listing'
+    host: process.env.HOST,
+    user:   process.env.DATABASE_USER,
+    password:  process.env.DATABASE_PASSWORD,
+    database:   process.env.DATABASE
 })
 
 
