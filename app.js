@@ -36,6 +36,9 @@ app.get('/listProduct', (req, res)=>{
 
 });
 
+app.get('/test', (req, res)=> {
+    res.send("HELLO WORLD");
+})
 
 app.post('/addProduct', (req, res)=>{
     let sql = 'INSERT INTO PRODUCT SET ?'
