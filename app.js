@@ -30,7 +30,6 @@ app.get('/listProduct', (req, res)=>{
     let sql = 'SELECT * FROM PRODUCT';
     let query = db.query(sql, (err, result) => {
         if(err) throw err;
-        console.log(result);
         res.json(result);
     });
 
@@ -54,15 +53,12 @@ app.post('/addProduct', (req, res)=>{
     }
     db.query(sql, post, (err, result) => {
         if(err) throw err;
-        console.log('success');
-        //console.log(res);
         res.json({Message : "Product Added Successfully"})
     });
 })
 
 app.delete('/deleteProduct/:id', (req, res)=>{
     var id = req.params.id;
-    //
     let sql = 'DELETE from PRODUCT WHERE id = ?'
     db.query(sql, [id],     (err, result) => {
         if(err) throw err;
